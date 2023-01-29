@@ -8,6 +8,8 @@ class Booking(models.Model):
     BookingDate=models.DateTimeField(default=datetime.datetime.now)
 
 class Menu(models.Model):
+    def __str__(self):
+        return f'{self.Title} : {self.Price}'
     Title=models.CharField(max_length=255)
     Price=models.DecimalField(max_digits=6,decimal_places=2)
     Inventory=models.IntegerField(max_length=5)
